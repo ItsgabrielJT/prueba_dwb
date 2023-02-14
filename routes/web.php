@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Comeinza a leer desde aqui !!!!!!!!!!!
+// 1.- Comeinza a leer desde aqui !!!!!!!!!!!
 // El bloque de aqui nos direcciona a ingresar la cuenta de spotify para loguearnos
 Route::get('/login-spotify', function () {
     return Socialite::driver('spotify')->redirect(); // Esta liena es obetenido de la docuemtnacion
@@ -46,14 +47,13 @@ Route::get('/spotify-callback', function () {
         ]);
         Auth::login($userNew);
     }
-    return redirect('/form');
+    return redirect('post');
 });
 
 // POR ULTIMO: No olvidar rellenar los camos de avatar, external id y auth en el modelo User en la propiedad fillable
 
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('post', 'PostController');
+Route::resource('post', PostController::class);
 
 Route::get('markAsRead', function(){
         auth()->user()->unreadNotifications->markAsRead();
