@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Models\User;
 use App\Notifications\PostNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Queue\InteractsWithQueue;
 
 class PostListener
