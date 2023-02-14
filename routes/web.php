@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormContactoController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -48,5 +49,8 @@ Route::get('/twitter-callback', function () {
     }
     return redirect('/form');
 });
+
+
+Route::resource('/Contacto', FormContactoController::class)->names('Form');
 
 // POR ULTIMO: No olvidar rellenar los camos de avatar, external id y auth en el modelo User en la propiedad fillable
