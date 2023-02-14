@@ -32,17 +32,17 @@ y agregar estas lineas de codigo
     ],
 ```
 
-> Tambien tenemos que configurar el archivo .env ⚙️
-> Los datos de abajo son fake 🤡
+> Tambien tenemos que configurar el archivo .env ⚙️. 
+> Los datos de abajo son reales ⚠️
 ```
-TWITTER_CLIENT_ID="802389dsdasd"
-TWITTER_CLIENT_SECRET="addasda89432"
-TWITTER_REDIRECT_URI="sjfaldaff#34dasda"
+TWITTER_CLIENT_ID=149ca119ece64fdcb6219760e3e86015
+TWITTER_CLIENT_SECRET=86af3e39168540a9af0b843f13eacbf2
+TWITTER_REDIRECT_URI=http://127.0.0.1:8000/spotify-callback
 ```
 
 > Tener en cuenta que los valores de arriba cambian de acuerdo a la cuenta de twitter que uses
 
-Para tener los valores de arriba tienes que crear un aplicacion en [Dev Twitter](https://developer.twitter.com/en) dentro de la aplicacion creada, estan los valores de arriba que necesitas
+Para tener los valores de arriba tienes que crear un aplicacion en [Dev Spotify](https://developer.spotify.com/) dentro de la aplicacion creada, estan los valores de arriba que necesitas
 
 > Por ultimo ve directo al archivo web y mira como estas creadas las rutas 🤖
 

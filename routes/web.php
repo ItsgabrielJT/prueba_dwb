@@ -30,7 +30,22 @@ Route::get('/login-spotify', function () {
 Route::get('/spotify-callback', function () {
     $user = Socialite::driver('spotify')->user(); // Obetnermos el ususrio de spotify
  
-    dd($user);
+    $userExist = User::where('external_id', $user->id)->where('external_auth', 'spotify')->first();
+
+    if ($userExist) {
+        Auth::login($userExist); // SI existe nos logueamos 
+    } else {
+        $userNew = User::create([ // Si no lo creamos
+            // Todos los datos de abajo los obetenmos de la session de spotify
+            'name' => $user->name,
+            'email'=> $user->email,
+            'avatar'=>$user->avatar,
+            'external_id'=>$user->id,
+            'external_auth'=>'spotify'
+            // Una vez creado el ussuraio guarda la informacion en la base de datos
+        ]);
+        Auth::login($userNew);
+    }
     return redirect('/form');
 });
 
