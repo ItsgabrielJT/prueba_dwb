@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <button type="reset" class="btn btn-secondary px-5">Resetear</button>
+                <a href="{{route('Form.index')}}" class="btn btn-secondary px-5">Cancelar</a>
             </div>
             <div class="col text-center">
                 <button type="submit" class="btn btn-success px-5">Enviar</button>

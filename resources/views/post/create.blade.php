@@ -11,33 +11,28 @@
     <body>
       <!-- Una ves ya creaste el formulario que mandara la infomacion de la notificacion -->
       <!-- Nos regresamos a PostController porque tenemos que cofigurar el metodo store para guardar la informacion que recolectamos-->
-        <div class="container text-center">
+        <div class="container text-center mt-3">
             <h1> Create Post </h1>
-        </div>        
-
-        <form action="{{ route('post.store') }}" method="POST">
+        </div>
+        <hr>
+  
+        <form action="{{ route('post.store') }}" method="POST" class="m-5">
           @csrf
-          <div class="container border border-secondary">            
+          <div class="container border border-secondary  shadow-lg p-5 rounded-3">            
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Title</label>
-              <input type="text" class="form-control" name="title" rows="3">
+              <input type="text" class="form-control" name="title" rows="3" required>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Description</label>
-              <input type="text" class="form-control" name="description" rows="3">
+              <input type="text" class="form-control" name="description" rows="3" required>
             </div>
-            <button class="btn btn-dark" type="submit">Submit</button>
+            <div class="text-center">
+              <button class="btn btn-success px-5" type="submit">Crear</button>
+            </div>
           </div>
         </form>
 
-        <div class="flex justify-center mt-4 sm:items-center sm:justify-between bg-gray-100 dark:bg-gray-900">
-          <div class="text-center text-sm text-gray-500 sm:text-left">
-              <div class="flex items-center">                                                                                                                 
-                  <a href="{{ route('Form.index') }}" class="ml-1 underline">
-                    <button type="submit" class="btn btn-success px-5">Formulario </button>
-                </a>                                                   
-              </div>
-          </div>
       </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

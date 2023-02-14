@@ -7,7 +7,7 @@
         <div class="alert alert-success" role="alert">
             Se ha enviado con exito!
         </div>
-        <a href="{{route('Form.create')}}" class="btn btn-success px-5">Confirmar</a>
+        <a href="{{route('Form.index')}}" class="btn btn-success px-5">Confirmar</a>
     </div>
 @else
     <div style="height:100vh" class="d-flex justify-content-center align-items-center flex-column">
@@ -17,7 +17,7 @@
         </div>
         
     @endforeach
-        <a href="{{route('Form.create')}}" class="btn btn-success px-5">Intentar De nuevo</a>
+        <a href="{{route('Form.index')}}" class="btn btn-success px-5">Intentar De nuevo</a>
     </div>
 
 @endif
