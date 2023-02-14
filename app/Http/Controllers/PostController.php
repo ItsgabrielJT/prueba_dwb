@@ -37,8 +37,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $postNotifications = auth()->user()->unreadNotifications;
-        return view('post.notifications', compact('postNotifications'));
+        
     }
 
     public function markNotification(Request $request)
@@ -49,4 +48,5 @@ class PostController extends Controller
                 })->markAsRead();
         return response()->noContent();
     }
+
 }
