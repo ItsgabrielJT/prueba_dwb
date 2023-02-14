@@ -26,7 +26,7 @@ Route::get('/', function () {
 // El bloque de aqui nos direcciona a ingresar la cuenta de spotify para loguearnos
 Route::get('/login-spotify', function () {
     return Socialite::driver('spotify')->redirect(); // Esta liena es obetenido de la docuemtnacion
-});
+})->name('login-spotify');
 
 // Aqui nos retorna la informacion que obtuvo de spotify y nos manda a la siqguente seccion de nuestra pagina
 Route::get('/spotify-callback', function () {
