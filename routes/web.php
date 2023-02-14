@@ -20,7 +20,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 // 1.- Comeinza a leer desde aqui !!!!!!!!!!!
 // El bloque de aqui nos direcciona a ingresar la cuenta de spotify para loguearnos
@@ -56,7 +56,7 @@ Route::get('/spotify-callback', function () {
 // PAra ver la funcionalidad de notificaciones comienza por aqui !!!!!!!
 
 // Una vez creas la ruta, andate al archivo POstController
-Route::resource('post', PostController::class);
+Route::resource('post', PostController::class)->names('post');
 
 Route::resource('/Contacto', FormContactoController::class)->names('Form');
 

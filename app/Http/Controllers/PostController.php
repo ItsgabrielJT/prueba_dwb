@@ -13,7 +13,8 @@ class PostController extends Controller
     {
         // Vas a primero a crear una vista que tendra el mensaje que quieres notificar
         // Asi que ve a la vista post
-        return view('post.create'); 
+        $posts = Post::all();
+        return view('post.create',compact('posts')); 
     }
 
     // Una ves que ya fuiste a la vista post.create
@@ -35,9 +36,11 @@ class PostController extends Controller
         
     }
 
-    public function index()
+    public function show($id)
     {
+        $post = Post::find($id);
         
+        return view('post.show',compact('post'));
     }
 
 }

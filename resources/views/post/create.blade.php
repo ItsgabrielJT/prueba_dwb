@@ -15,6 +15,10 @@
             <h1> Create Post </h1>
         </div>
         <hr>
+
+        <div class="text-end mx-5">
+          <a href="{{route('/')}}" class="btn btn-danger px-5"> Welcome</a>
+        </div>
   
         <form action="{{ route('post.store') }}" method="POST" class="m-5">
           @csrf
@@ -32,8 +36,28 @@
             </div>
           </div>
         </form>
-
       </div>
+
+
+      <div class="m-5 p-5 shadow-lg">
+        @foreach ($posts as $form)
+        <div class="row alert alert-success" role="alert">
+            <div class="col">
+                <div class="row">
+                    <h3 class="col text-secondary lead fs-2">Titulo:</h3>
+                    <h3 class="col text-dark">{{$form->title}}</h3>
+                </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <h3 class="col text-secondary lead fs-2">Descripción:</h3>
+                <h3 class="col text-dark">{{$form->description}}</h3>
+              </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">

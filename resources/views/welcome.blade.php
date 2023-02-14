@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -24,14 +25,16 @@
     <body class="antialiased">
 
         <div class="flex justify-center mt-4 sm:items-center sm:justify-between bg-gray-100 dark:bg-gray-900">
-            <div class="text-center text-sm text-gray-500 sm:text-left">
-                <div class="flex items-center">                    
-                    <a href="{{ route('login-spotify') }}" class="ml-1 underline">
-                        Login Spotify
-                    </a>                                                      
-                    <a href="{{ route('Form.index') }}" class="ml-1 underline">
-                        Formulario
-                    </a>                                                      
+            <div class="text-center text-sm text-gray-500 sm:text-left w-100">
+                <div class="w-100 d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-between align-items-center w-75 mt-3">                    
+                        <a href="{{ route('login-spotify') }}" class="btn btn-success">
+                            Login Spotify
+                        </a>                                                      
+                        <a href="{{ route('Form.index') }}" class="btn btn-primary">
+                            Formulario
+                        </a>                                                      
+                    </div>
                 </div>
             </div>
         </div>
