@@ -17,7 +17,11 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 Route::get('/', function () {
-    return view('form');
+    return view('welcome');
+});
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
  
@@ -42,5 +46,5 @@ Route::get('/twitter-callback', function () {
         ]);
         Auth::login($userNew);
     }
-    return redirect('/formulario');
+    return redirect('/form');
 });

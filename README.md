@@ -7,6 +7,46 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Instalar el proyecto de forma local ⚠️⚠️⚠️⚠️
+
+Al clonar el repositorio remoto e instalrlo de forma local debemos de seguir una serie de pasos 
+para tener el proyecto funcionando en nuestro computador. Ejecuta los sigueintes comandos en la terminal despues de haber clonado el proyecto, hazlo en la carpeta del proyecto:
+
+- composer install
+- php artisan migrate
+- php artisan storage:link
+- composer require socialiteproviders/twitter
+
+> El ultimo comando nos instala lo que nesecitamos para la funcionalidad del login con twitter. 
+
+## Funcionalidad de Login con twitter 🧩🚀
+
+Una vez instaldo las dependencias que necitamos tenemos que editar el archivo config/services.php
+y agregar estas lineas de codigo
+
+```
+'twitter' => [    
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT_URI')
+    ],
+```
+
+> Tambien tenemos que configurar el archivo .env ⚙️
+
+```
+TWITTER_CLIENT_ID="802389dsdasd"
+TWITTER_CLIENT_SECRET="addasda89432"
+TWITTER_REDIRECT_URI="sjfaldaff#34dasda"
+```
+
+> Tener en cuenta que los valores de arriba cambian de acuerdo a la cuenta de twitter que uses
+
+Para tener los valores de arriba tienes que crear un aplicacion en [Dev Twitter](https://developer.twitter.com/en)
+
+> Por ultimo ve directo al archivo web y mira como estas creadas las rutas 🤖
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
