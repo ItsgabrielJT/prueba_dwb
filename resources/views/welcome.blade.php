@@ -29,6 +29,9 @@
                     <a href="{{ route('login-spotify') }}" class="ml-1 underline">
                         Login Spotify
                     </a>                                                      
+                    <a href="{{ route('Form.index') }}" class="ml-1 underline">
+                        Formulario
+                    </a>                                                      
                 </div>
             </div>
         </div>

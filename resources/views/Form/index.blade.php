@@ -2,6 +2,11 @@
 
 @section('content')
 <h1 class="text-center m-4 border-bottom pb-3 border-2">FORMULARIOS DE CONTACTOS ENVIADOS</h1>
+<div class="col text-right">
+    <a href="{{ route('Form.create') }}" class="ml-1 underline">
+        <button type="submit" class="btn btn-success px-5">Crear</button>
+    </a> 
+</div>
 @foreach ($forms as $form)
     <div class="row alert alert-success" role="alert">
         <div class="col">
@@ -23,6 +28,7 @@
                     <a href="{{route('Form.show', $form->id)}}" class="btn btn-success px-4" >Ver más</a>
                 </div>
             </div>
+            
         </div>
     </div>
 @endforeach

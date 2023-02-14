@@ -30,6 +30,16 @@
           </div>
         </form>
 
+        <div class="flex justify-center mt-4 sm:items-center sm:justify-between bg-gray-100 dark:bg-gray-900">
+          <div class="text-center text-sm text-gray-500 sm:text-left">
+              <div class="flex items-center">                                                                                                                 
+                  <a href="{{ route('Form.index') }}" class="ml-1 underline">
+                    <button type="submit" class="btn btn-success px-5">Formulario </button>
+                </a>                                                   
+              </div>
+          </div>
+      </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
         </script>
