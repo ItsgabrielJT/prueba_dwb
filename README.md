@@ -14,7 +14,7 @@ para tener el proyecto funcionando en nuestro computador. Ejecuta los sigueintes
 
 - composer install
 - php artisan migrate
-- php artisan storage:link
+- php artisan key:generate
 - composer require socialiteproviders/twitter
 
 > El ultimo comando nos instala lo que nesecitamos para la funcionalidad del login con twitter. 
@@ -33,7 +33,7 @@ y agregar estas lineas de codigo
 ```
 
 > Tambien tenemos que configurar el archivo .env ⚙️
-
+> Los datos de abajo son fake 🤡
 ```
 TWITTER_CLIENT_ID="802389dsdasd"
 TWITTER_CLIENT_SECRET="addasda89432"
@@ -42,7 +42,7 @@ TWITTER_REDIRECT_URI="sjfaldaff#34dasda"
 
 > Tener en cuenta que los valores de arriba cambian de acuerdo a la cuenta de twitter que uses
 
-Para tener los valores de arriba tienes que crear un aplicacion en [Dev Twitter](https://developer.twitter.com/en)
+Para tener los valores de arriba tienes que crear un aplicacion en [Dev Twitter](https://developer.twitter.com/en) dentro de la aplicacion creada, estan los valores de arriba que necesitas
 
 > Por ultimo ve directo al archivo web y mira como estas creadas las rutas 🤖
 
