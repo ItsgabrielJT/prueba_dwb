@@ -52,12 +52,9 @@ Route::get('/spotify-callback', function () {
 
 // POR ULTIMO: No olvidar rellenar los camos de avatar, external id y auth en el modelo User en la propiedad fillable
 
+// PAra ver la funcionalidad de notificaciones comienza por aqui !!!!!!!
 
+// Una vez creas la ruta, andate al archivo POstController
 Route::resource('post', PostController::class);
 
-Route::get('markAsRead', function(){
-        auth()->user()->unreadNotifications->markAsRead();
-        return redirect()->back();
-})->name('markAsRead');
 
-Route::post('/mark-as-read', 'PostController@markNotification')->name('markNotification');

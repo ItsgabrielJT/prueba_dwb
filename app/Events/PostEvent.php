@@ -23,6 +23,12 @@ class PostEvent
      */
     public function __construct($post)
     {
+        // 1.- Eventos
+        // Funcionq que se ejecuta cuando una accion sucede
+
+        // Dentro del construntor tenemos que asignar el dato que recibimos en el constructor a la 
+        // varianle publica post, esta es publica porque tiene que comunicarse con el listener
+        // Y listo es lo unico que tenemos que hacer y nos vamos a POstListener
         $this->post = $post;
     }
 

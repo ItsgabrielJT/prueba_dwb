@@ -24,9 +24,12 @@ class EventServiceProvider extends ServiceProvider
             \SocialiteProviders\Spotify\SpotifyExtendSocialite::class.'@handle',
         ],
 
+        // Esta propiedad de aca no viene por defecto
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        // Agregamos la propiedad del Event para que pueda funcionar
+        // De squi nos dirigimos al controaldor de POst
         PostEvent::class => [
             PostListener::class,
         ],

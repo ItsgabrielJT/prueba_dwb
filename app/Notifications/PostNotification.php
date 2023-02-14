@@ -13,7 +13,7 @@ class PostNotification extends Notification
 {
     use Queueable;
 
-    private $post;
+    private $post; // definimos primero una varible post proevada que recibira toda la informacion del listener
 
     /**
      * Create a new notification instance.
@@ -33,7 +33,7 @@ class PostNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database']; // Le indicamos qu ela informacion es para una base de datos
     }
 
     /**
@@ -44,6 +44,7 @@ class PostNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        // Esto de aca viene por defecto
         return (new MailMessage)
                     ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
@@ -58,6 +59,8 @@ class PostNotification extends Notification
      */
     public function toArray($notifiable)
     {
+        // Colocamos toso los datos del post 
+        // POr ultimo nos vamos a la clase EventServiceProvider
         return [
             'post'  => $this->post->id,
             'title' => $this->post->title,

@@ -7,6 +7,8 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- Una ves ya creaste el formulario que mandara la infomacion de la notificacion -->
+  <!-- Nos regresamos a PostController porque tenemos que cofigurar el metodo store para guardar la informacion que recolectamos-->
   <form action="{{ route('post.store') }}" method="POST">
     @csrf
     <div class="form-group">

@@ -17,6 +17,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     // Recordar siempre tener los campos que queremos instroducir datos
     protected $fillable = [
         'name',
         'email',
@@ -25,6 +27,8 @@ class User extends Authenticatable
         'external_id',
         'external_auth'
     ];
+
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,6 +49,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Aqui es donde acabamos de definir la relacion de uno a muchos por ultimo nos regresamos a POst Controller
     public function posts()
     {
         return $this->hasMany('App\Post');
