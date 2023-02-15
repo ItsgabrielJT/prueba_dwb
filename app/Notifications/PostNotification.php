@@ -8,6 +8,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\DatabaseMessage;
+
 
 class PostNotification extends Notification
 {
@@ -57,6 +59,15 @@ class PostNotification extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
+
+     public function toDatabase($notifiable)
+     {
+         return new DatabaseMessage([
+             'message' => 'Se ha creado un nuevo post'
+         ]);
+     }
+
+
     public function toArray($notifiable)
     {
         // Colocamos toso los datos del post 

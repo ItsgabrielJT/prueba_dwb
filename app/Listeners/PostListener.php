@@ -39,7 +39,6 @@ class PostListener
             ->except($event->post->user_id)
             ->each(function(User $user) use($event){
                 Notification::send($user, new PostNotification($event->post));
-                
             });
     }
 }

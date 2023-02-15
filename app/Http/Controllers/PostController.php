@@ -6,6 +6,7 @@ use App\Events\PostEvent;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\PostNotification;
 
 class PostController extends Controller
 {
@@ -30,6 +31,9 @@ class PostController extends Controller
         // Vamos por los eventos
         // Nos dirigmos al PostEvent
         event(new PostEvent($post)); 
+
+        $user = Auth::user();
+        $user->notify(new PostNotification($post));
         // Bueno na vez ya acabando de hacer los anteriores pasos ya solo comprobamos si salio todo bien
 
         return redirect()->back()->with('message', 'Post created sucessfully');

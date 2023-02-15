@@ -60,3 +60,8 @@ Route::resource('post', PostController::class)->names('post');
 
 Route::resource('/Contacto', FormContactoController::class)->names('Form');
 
+Route::get('/notifications', function () {
+    $user = Auth::user();
+    return $user->unreadNotifications;
+});
+
