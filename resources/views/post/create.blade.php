@@ -40,7 +40,7 @@
       </div>
 
 
-      <div class="m-5 p-5 shadow-lg">
+      <div class="m-5 p-5 shadow-lg" id="contenido">
         @foreach ($posts as $form)
         <div class="row alert alert-success" role="alert">
             <div class="col">
@@ -67,7 +67,6 @@
 
       setInterval(() => {
         $.get('/notifications', function(data) {
-
             if (localStorage.getItem('cantidad')==null) {
                 localStorage.setItem('cantidad',data.length);
             }else{
