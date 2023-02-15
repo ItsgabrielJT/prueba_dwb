@@ -112,6 +112,7 @@ Recuerda que en railway podemos desplegar nuestra bses de datos MySQL a la vez q
 - Siempre antes que nada tenemos que eliminar nuestro archivo **composer.lock**
 - Depues tenemos que copiar las variables del .env y pegarlas en el despliegue
 - POr ultimo cambiamos las varibles de la conexion a bases de datos que nos provio Railway al principio del proyecto de MySQL
+- [Link del despliqegue](https://pruebadwb-production.up.railway.app/)
 
 ## License
 
