@@ -15,7 +15,8 @@ class PostController extends Controller
         // Vas a primero a crear una vista que tendra el mensaje que quieres notificar
         // Asi que ve a la vista post
         $posts = Post::all();
-        return view('post.create',compact('posts')); 
+        $postNotifications = auth()->user()->unreadNotifications;
+        return view('post.create',compact('posts', 'postNotifications')); 
     }
 
     // Una ves que ya fuiste a la vista post.create
@@ -31,20 +32,25 @@ class PostController extends Controller
         // Vamos por los eventos
         // Nos dirigmos al PostEvent
         event(new PostEvent($post)); 
-
-        $user = Auth::user();
-        $user->notify(new PostNotification($post));
         // Bueno na vez ya acabando de hacer los anteriores pasos ya solo comprobamos si salio todo bien
 
         return redirect()->back()->with('message', 'Post created sucessfully');
         
     }
 
-    public function show($id)
+    public function index()
     {
-        $post = Post::find($id);
-        
-        return view('post.show',compact('post'));
+        $postNotifications = auth()->user()->unreadNotifications;
+        return view('post.notifications', compact('postNotifications'));
     }
 
+    public function markNotification(Request $request)
+    {
+        auth()->user()->unreadNotifications
+                ->when($request->input('id'), function($query) use ($request){
+                    return $query->where('id', $request->input('id'));
+                })->markAsRead();
+        return response()->noContent();
+    }
+   
 }
